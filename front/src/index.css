@@ -13,11 +13,11 @@ code {
 }
 
 .stickman {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 90px;
+  max-height: 90px;
 }
 
 .trophy {
-  /* max-width: 200px;
-  max-height: 200px; */
+  max-width: 90px;
+  max-height: 90px;
 }
