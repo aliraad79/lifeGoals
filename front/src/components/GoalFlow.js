@@ -2,6 +2,8 @@ import React from 'react';
 import ReactFlow from 'reactflow';
 import ActorNode from './nodes/ActorNode';
 import TrohpyNode from './nodes/TrophyNode';
+import Button from 'react-bootstrap/Button';
+
 import 'reactflow/dist/style.css';
 
 const nodeTypes = {
@@ -13,7 +15,9 @@ function GoalFlow({ name, goals }) {
     var { nodes, edges } = convertToNodesAndEdges(goals);
     return (
         <>
-            <div>{name}</div>
+            <Button variant="danger" >
+                {name}
+            </Button>
             <div style={{ height: '20vh' }}>
                 <ReactFlow
                     nodes={nodes}
