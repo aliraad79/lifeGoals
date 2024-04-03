@@ -7,13 +7,18 @@ from django.contrib.auth.models import User
 
 class Goal(models.Model):
     GOAL_TYPES = [
-        
         ("I", "Important"),
         ("N", "Not Important"),
     ]
-    type = models.CharField(max_length=4, choices=GOAL_TYPES)
+    TIME_UNITS = [
+        ("M", "Month"),
+        ("Y", "Year"),
+    ]
+    type = models.CharField(max_length=4, choices=GOAL_TYPES, default="N")
     name = models.CharField(max_length=32, null=True)
-    duration = models.CharField(max_length=128, default='5 years')
+    time = models.PositiveIntegerField()
+    time_unit = models.CharField(max_length=1, choices=TIME_UNITS, default="M")
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.name}"

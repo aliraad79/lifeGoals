@@ -5,7 +5,7 @@ from rest_framework import serializers
 class GoalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Goal
-        fields = ["name", "duration"]
+        fields = ["name", "time", "time_unit", "type"]
 
 
 class FlowSerializer(serializers.ModelSerializer):
