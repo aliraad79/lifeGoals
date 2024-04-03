@@ -10,5 +10,4 @@ class FlowViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     serializer_class = FlowSerializer
 
     def get_queryset(self):
-        print("HERE")
         return Flow.objects.filter(owner=self.request.user.id)
